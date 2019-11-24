@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="public/styles.css">
+        <link rel="stylesheet" href="public/animate.css">
+        <script src="public/jquery.js"></script>
+    </head>
+    <body class="overflow">
+        <div class="bg-stars h-100 mb-5">
+            <div class="container centralizar overflow">
+                <div class="row">
+                    <div class="col-12 text-center animated bounceIn delay-1s overflow">
+                        <p id="bem-vindo" class="f-48 c-white">ALGORITMO QUANTICO DE DEUTCH-LOZSA</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 text-center bounceIn delay-1s animated overflow">
+                        <p id="introduction" class="c-white animated tada delay-2s">CLIQUE NOS BOTOES LATERAIS PARA VERIFICAR SE A FUNCAO E CONSTANTE OU BALANCEADA <BR> OU SE PREFERIR CRIE A SUA</BR></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="result-funcao" class="col-12 text-center animated bounceInDown">
+                        <p class="f-48 c-white"></p>
+                    </div>
+                </div>
+                <div id="customize-function" class="box white d-none animated bounceInDown mb-5">
+                    <div class="row">
+                        <div class="col-12 text-center mt-20 mb-20">
+                            <p class="f-48 px-2 c-white">CRIE SUA PROPRIA FUNCAO</p>
+                        </div>
+                    </div>
+                    <div class="row justify-content-end mb-4">
+                        <div class="col-12 col-md-2 pr-5">
+                            <button type="button" id="btn-gerar" class="btn-gerar">+ Valores</button>
+                        </div>
+                       
+                    </div>
+                    <div class="row justify-content-end">
+                        <div class="col-12 col-md-2 pr-5">
+                            <button type="button" id="btn-enviar" class="btn-enviar">Enviar</button>
+                        </div>
+                    </div>
+                    <div class="row py-5">
+                        <div class="col-12 col-md-4 text-center align-self-center">
+                            <img src="public/imgs/atom.png" class="img-responsive img-atom">
+                        </div>
+                        <div class="col-12 col-md-8 pr-50" id="valores" data-valores="1">
+                            <div class="row text-center mb-3">
+                                <div class="col-12 col-md-6 d-flex justify-content-between border-top-bottom">
+                                    <div>
+                                        <input id="valor1" placeholder="valor" class="val form-control-padrao" type="text">
+                                    </div>
+                                    <span class="operacao c-white"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="sobre" class="row d-none box white animated bounceInDown mb-5">
+                    <div class="col-12 text-center my-4"><p class="f-48 c-white">SOBRE O ALGORITIMO:</p></div>
+                    <div class="col-md-6 col-12">
+                        <img src="public/imgs/deutch.png" class="img-fluid">
+                        <p class="f-12 c-white robot"><i>*Imagem ilustrativa da complexidade cabulosa do algoritimo</i></p>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <p class="f-18 sans-pro c-white"><i>"O algoritmo de Deutsch-Jozsa é um algoritmo quântico, proposto por David Deutsch e Richard Jozsa in 1992,[1] e melhorado por Richard Cleve, Artur Ekert, Chiara Macchiavello e Michele Mosca en 1998.[2] Apesar de possuir uma aplicação prática limitada, trata-se de um dos primeiros exemplos de um algoritmo quântico que é exponencialmente mais rápido que qualquer algoritmo determinístico clássico."</i> - Wikipedia</p>
+                        <br>
+                        <p class="f-18 sans-pro c-white">o algotimo lida com funções que são equilibradas ou constantes. Uma função f é chamada de balanceada se gerar valores que não são iguais. É uma função constante se sua saída for uma constante, independentemente da entrada.</p>
+                        <br>
+                        <p class="f-18 sans-pro c-white">enviamos a função para ser tratada pela função oracle (um circuito quântico super inteligente ou super liso). Ela usa o conceito de paralelismo quântico para calcular todos os valores de f (x)</p>
+                        <br>
+                    </div>
+                    <div class="col-12 text-center">
+                        <img src="public/imgs/oracle-function.jpeg" class="img-fluid w-100">
+                        <p class="f-12 c-white robot"><i>*Imagem ilustrativa que mostra como funciona a ideia do algoritmo</i></p>
+                    </div>
+                    <div class="col-12 text-center my-4"><p class="f-48 c-white">SOBRE O APLICATIVO:</p></div>
+                    <div class="col-12">
+                        <p class="f-18 sans-pro c-white">Para fazer esse aplicativo foram utilizados como Frameworks: Bootstrap, Flask e Quantum-Python(https://github.com/meownoid/quantum-python)</p>
+                        <br>
+                        <p class="f-18 sans-pro c-white">foi feito uma API em Python com Flask para fazer as implementações necessárias para cacular o balanceamento das funções, e retornar o valor para que a aplicação feita com Bootstrap consumisse</p>
+                    </div>
+                </div>
+            </div>
+            <div class="buttons-laterais">
+                <div class="d-flex my-3 botao-lateral" data-acao="funcao 1">
+                    <div class="container-esq mx-3">
+                        <p class="f-18 centralizar-Y text-center"><b>FUNCAO 1</b></p>
+                    </div>
+                    <div class="container-dir">
+                        <p class="f-12 mr-3 centralizar-Y text-center sans-pro">Funcao 1: f(x) = x</p>
+                    </div>
+                </div>
+                <div class="d-flex my-3 botao-lateral" data-acao="funcao 2">
+                    <div class="container-esq mx-3">
+                        <p class="f-18 centralizar-Y text-center"><b>FUNCAO 2</b></p>
+                    </div>
+                    <div class="container-dir">
+                        <p class="f-12 mr-3 centralizar-Y text-center sans-pro">Funcao 1: f(x) = 1</p>
+                    </div>
+                </div>
+                <div class="d-flex my-3 botao-lateral" data-acao="funcao 3">
+                    <div class="container-esq mx-3">
+                        <p class="f-18 centralizar-Y text-center"><b>FUNCAO 3</b></p>
+                    </div>
+                    <div class="container-dir">
+                        <p class="f-12 mr-3 centralizar-Y text-center sans-pro">Funcao 1: f(x,y) = x*y</p>
+                    </div>
+                </div>
+                <div class="d-flex my-3 botao-lateral" data-acao="C">
+                    <div class="container-esq mx-3">
+                        <p class="f-18 centralizar-Y text-center"><b>CUSTOM</b></p>
+                    </div>
+                    <div class="container-dir">
+                        <p class="f-12 mr-3 centralizar-Y text-center sans-pro">Customize seu proprio retorno de funcao</p>
+                    </div>
+                </div>
+                <div class="d-flex my-3 botao-lateral" data-acao="S">
+                    <div class="container-esq mx-3">
+                        <p class="f-18 centralizar-Y text-center"><b>SOBRE</b></p>
+                    </div>
+                    <div class="container-dir">
+                        <p class="f-12 mr-3 centralizar-Y text-center sans-pro">Breve explicacao sobre o trabalho e os integrantes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="public/jquery.js"></script>
+        <script>
+            function listenerValor(){
+                $('.val').on('change', function(){
+                    var element = $(this).closest('div')
+                    var valor = parseInt($(this).val())
+                    var secon = element.next('span')
+                    secon.html(ResolverIcognitaOuValor(valor))
+                })
+            }
+            function ResolverIcognitaOuValor(valor){
+                var result = 'Numero'
+                if(isNaN(valor)){
+                    result = 'Icognita'
+                }
+                return result
+            }
+            function VerificarSeMostraOuDesmostra(elemento){
+                if($(elemento).hasClass('d-none')){
+                    $(elemento).removeClass('d-none')
+                    $(elemento).removeClass('bounceOutUp')
+                    $(elemento).addClass('bounceIn')
+                    RegularPosicaoAltura()
+                }else{
+                    $(elemento).removeClass('bounceIn')
+                    $(elemento).addClass('bounceOutUp')
+                    setTimeout(function(){
+                        $(elemento).addClass('d-none')
+                        RegularPosicaoAltura()
+                    },800)
+                }
+            }
+            function AbrirTela(tela){
+                if(tela === "C"){
+                    VerificarSeMostraOuDesmostra('#customize-function')
+                }
+                if(tela === "S"){
+                    VerificarSeMostraOuDesmostra('#sobre')
+                }
+            }
+            function ChamarFuncao(funcao){
+                var $j = jQuery.noConflict();
+                $j.get('http://127.0.0.1:5002/deutch', {funcao: funcao})
+                    .done(function(data){
+                        $('#result-funcao p').html(`Resultado da ${data.funcao} = ${data.result}`)
+                    })
+                    .fail(function(){
+                        alert('Não foi possível verificar a função')
+                    })
+            }
+            function RegularPosicaoAltura(){
+                var heightBody = $('body').innerHeight()
+                var heightContainer = $('.centralizar').innerHeight()
+                if(heightContainer> heightBody){
+                    $('.centralizar').css({"top": "0", "transform": "inherit"})
+                    $('.buttons-laterais').css({"right": "10px"})
+                }else{
+                    $('.centralizar').css({"top": "50%", "transform": "translateY(-50%)"})
+                    $('.buttons-laterais').css({"right": "0px"})
+                }
+            }
+            function GetValues(){
+                var data = {
+                    valores : [],
+                    operacoes: [],
+                }
+                var elementoValores
+                $('.val').each(function(element){
+                    elementoValores = {
+                        valor: $(this).val(),
+                        tipo: ResolverIcognitaOuValor($(this).val())
+                    }
+                    data.valores.push(elementoValores)
+                })
+                $('.operations').each(function(element){
+                    data.operacoes.push($(this).val())
+                })
+                return data
+            }
+            $(document).ready(function(){
+                listenerValor()
+                $('#btn-gerar').on('click', function(){
+                    RegularPosicaoAltura()
+                    var valores = parseInt($('#valores').attr('data-valores'))
+                    valores += 1 
+                    $('#valores').attr('data-valores', valores)
+                    document.getElementById('valores').insertAdjacentHTML('beforeEnd',`
+                        <div class="row my-4">
+                            <div class="col-6 text-center">
+                                <select id="operacoes${valores}" class="form-control-padrao operations">
+                                    <option class="item-select" value="" disabled selected>Operacao</option>
+                                    <option class="item-select" value="*">vezes(x)</option>
+                                    <option class="item-select" value="+">mais(+)</option>
+                                    <option class="item-select" value="-">menos(-)</option>
+                                    <option class="item-select" value="/">dividido por(/)</option>
+                                    <option class="item-select" value="^">elevado a(x^)</option>
+                                </select>    
+                            </div>
+                        </div> 
+                        <div class="row text-center mb-3">
+                            <div class="col-12 col-md-6 d-flex justify-content-between border-top-bottom">
+                                <div>
+                                    <input id="valor${valores}" placeholder="valor" class="val form-control-padrao" type="text">
+                                </div>
+                                <span class="operacao c-white"></span>
+                            </div>
+                        </div>
+                    `);
+                    listenerValor()
+                })
+                $('.botao-lateral').on('click', function(){
+                    $('#introduction').addClass('d-none')
+                    var acoesTomadas = new Map()
+                        .set('C', AbrirTela)
+                        .set('S', AbrirTela)
+                        .set('funcao 1', ChamarFuncao)
+                        .set('funcao 2', ChamarFuncao)
+                        .set('funcao 3', ChamarFuncao)
+                    var valor = $(this).attr('data-acao');
+                    var exe = acoesTomadas.get(valor);
+                    exe(valor);
+                })
+                $('#btn-enviar').on('click', function(){
+                    var $j = jQuery.noConflict();
+                    var dadosEnviar = GetValues()
+                    console.log(dadosEnviar)
+                    $j.post('http://127.0.0.1:5002/deutch?funcao=custom', JSON.stringify({dataEnviar:dadosEnviar}))
+                        .done(function(data){
+                            $('#result-funcao p').html(`Resultado da ${data.funcao} = ${data.result}`)
+                            console.log(data)
+                        })
+                        .fail(function(data){
+                            alert('Não foi possível verificar a função')
+                            console.log(data)
+                        })
+                })
+            })
+        </script>
+    </body>
+</html>
